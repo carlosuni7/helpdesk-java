@@ -12,7 +12,7 @@ public class Usuario {
     private Boolean ativo;
     private Date data_cadastro;
     
-    private Usuario() {
+    public Usuario() {
     	
     }
     
@@ -36,6 +36,14 @@ public class Usuario {
 		this.id = id;
 	}
 
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	
 	public String getEmail() {
 		return email;
 	}
@@ -50,6 +58,13 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	
+	public String getPerfil() {
+		return perfil;
+	}
+	public void setPerfil(String perfil) {
+		this.perfil = perfil;
 	}
 
 	public Boolean getAtivo() {
@@ -67,9 +82,7 @@ public class Usuario {
 	public void setData_cadastro(Date data_cadastro) {
 		this.data_cadastro = data_cadastro;
 	}
-
-	public String getNome() {
-		return nome;
-	}
+	
+	
 
 }
