@@ -24,7 +24,7 @@ public class Solicitacoes {
 	
 	public Solicitacoes(
 			int id, String titulo, String descricao, String local_ocorrencia, String prioridade,
-			String status, Date data_abertura, Date data_fechamente,
+			String status, Date data_abertura, Date data_fechamento,
 			int usuario_id, int tecnico_id, int categoria_id
 			) {
 		this.id = id;

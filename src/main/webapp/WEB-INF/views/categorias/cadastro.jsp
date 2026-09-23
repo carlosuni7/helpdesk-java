@@ -12,10 +12,10 @@
 	
 	<form action="${pageContext.request.contextPath }/SalvarCategoriasServlet" method="post">
 	
-	<label>Nome: </label>
+	<label>Nome:</label>
 	<input type="text" name="txtNome" required><br>
 	
-	<label>Nome: </label>
+	<label>Descrição:</label>
 	<input type="text" name="txtDescricao" required><br>
 	
 	<button type="submit">Salvar</button>
