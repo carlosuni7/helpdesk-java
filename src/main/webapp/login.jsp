@@ -4,7 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Página de Login</title>
+<!-- Para garantir que a página encontre o ficheiro CSS 
+independentemente de como a URL da 
+Servlet foi chamada, utilize a variável implícita  -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/estilos.css">
 </head>
 <body>
 
@@ -12,14 +16,17 @@
 
 <form action="${pageContext.request.contextPath }/login" method="post">
 	
-	<label>Email:</label>
-	<input type="text" name="txtEmail" required><br>
+	<div>
+		<label>Email</label>
+		<input type="text" name="textEmail" required>
+	</div>
 	
-	<label>Senha:</label>
-	<input type="text" name="txtSenha" required><br>
+	<div>
+		<label>Senha</label>
+		<input type="text" name="textSenha" required>
+	</div>
+	
 	
 	<button type="submit">Logar</button>
 	</form>
-
-</body>
-</html>
+	
