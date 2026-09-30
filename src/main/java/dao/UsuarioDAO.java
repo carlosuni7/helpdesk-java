@@ -12,7 +12,7 @@ public class UsuarioDAO {
 	
 public Usuario Logar(String email, String senha) throws SQLException {
 		
-		String sql = "select id, nome, email, senha from usuarios " +
+		String sql = "select * from usuarios " +
 		"where email = ? and senha = ? and ativo = true";
 		
 		try (Connection conexao = Conexao.obterConexao();
@@ -23,10 +23,10 @@ public Usuario Logar(String email, String senha) throws SQLException {
 				try(ResultSet resultado = logar.executeQuery()){
 					if(resultado.next()) {
 						Usuario usu = new Usuario();
-						usu.setId(resultado.getInt("id"));
+						usu.setId(resultado.getInt("id_usuario"));
 						usu.setNome(resultado.getString("nome"));
 						usu.setEmail(resultado.getString("email"));
-						usu.setPerfil(resultado.getString("perfil"));
+						//usu.setPerfil(resultado.getString("perfil"));
 						
 						return usu;
 					}
