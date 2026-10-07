@@ -57,6 +57,20 @@ public class CategoriaDAO {
 		}
 	}
 	
+	public void reativa(int id) throws SQLException, ClassNotFoundException {
+		String sqlInativar = "update categorias set ativo = true where id = ?";
+		
+		try (
+			Connection conexao = Conexao.obterConexao();
+			PreparedStatement comando = conexao.prepareStatement(sqlInativar)) {
+			
+			comando.setInt(1, id);
+			comando.executeUpdate();
+			
+		}
+		
+	}
+	
 	public Categorias localizarCategoria(int id) throws SQLException {
 		String sqlLocalizar = "select * from categorias where id = ?";
 		Categorias categoria = new Categorias();
@@ -88,10 +102,11 @@ public List<Categorias> listarCategorias() throws SQLException {
 				
 				ResultSet resultado = comando.executeQuery();
 				
+//				System.out.println("OLAAAAA"+resultado);
 				while (resultado.next()) {
 					
 					Categorias cat = new Categorias();
-					cat.setId(resultado.getInt(0));
+					cat.setId(resultado.getInt("id"));
 					cat.setNome(resultado.getString("nome"));
 					cat.setDescricao(resultado.getString("descricao"));
 					lista.add(cat);
