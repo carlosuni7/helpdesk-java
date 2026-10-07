@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
 			if(usu != null) {
 				HttpSession sessao = request.getSession();
 				sessao.setAttribute("usuarioLogado", usu);
-				response.sendRedirect(request.getContextPath() + "/home.jsp");
+				response.sendRedirect(request.getContextPath() + "/home");
 			} else {
 				request.setAttribute("erro", "e-Mail ou senha inválido!");
 				RequestDispatcher dispacher = request.getRequestDispatcher("/login.jsp");

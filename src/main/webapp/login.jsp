@@ -12,7 +12,7 @@ Servlet foi chamada, utilize a variável implícita  -->
 </head>
 <body>
 
-<h1>Hello World</h1>
+<h1>HelpDesk</h1>
 
 <form action="${pageContext.request.contextPath }/login" method="post">
 	
